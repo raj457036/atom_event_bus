@@ -12,3 +12,7 @@
 
 * Fixed example
 * Updated Readme
+
+## 0.0.4
+
+* Updated Readme

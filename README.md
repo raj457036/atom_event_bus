@@ -13,7 +13,7 @@ and the Flutter guide for
 
 # Atom Event Bus
 
-An Event Bus to decouple your code dependencies.
+An Event Bus based on Publish/Subscribe pattern to decouple your code dependencies using dart's Stream.
 
 ## Features
 
@@ -165,4 +165,4 @@ class MyHomePage extends StatelessWidget {
 
 ## Additional information
 
-https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern
+Publish–subscribe_pattern : [Wikipedia](https://en.wikipedia.org/wiki/Publish–subscribe_pattern)
