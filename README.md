@@ -24,7 +24,7 @@ An Event Bus to decouple your code dependencies.
 
 ## Diagram
 
-<img src="atom_event_bus.jpg" height="500">
+<img src="https://raw.githubusercontent.com/raj457036/atom_event_bus/master/atom_event_bus.jpg" height="500">
 
 ## Getting started
 
