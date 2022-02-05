@@ -2,10 +2,11 @@ library atom_event_bus;
 
 import 'dart:async';
 
-import 'package:flutter/material.dart';
-
 typedef EventCallback<T> = void Function(T payload);
 
+/// Actual payload to [EventBus]
+///
+/// To create a payload use [Event]'s method `createPayload`
 class _EventPayload<T> {
   /// Event name which is carrying this payload
   final String name;
@@ -32,6 +33,7 @@ class _EventPayload<T> {
   _EventPayload(this.name, this.value);
 }
 
+/// Event blueprint for [EventRule]
 class Event<T> {
   /// Name of the event
   final String name;
@@ -84,6 +86,7 @@ class Event<T> {
   _EventPayload createPayload(T payload) => _EventPayload(name, payload);
 }
 
+/// Used by [EventRule] for triggering [onEvent] callback
 class EventListener<T> {
   final EventCallback<T> _onEvent;
 
@@ -129,6 +132,9 @@ class EventListener<T> {
   }
 }
 
+/// Used by [EventRule] for triggering [onEvent] callback.
+///
+/// A type of [EventListener] which only calls its onEvent one time.
 class OneOffEventListener<T> extends EventListener<T> {
   int _timesCalled = 0;
 
@@ -180,6 +186,9 @@ class OneOffEventListener<T> extends EventListener<T> {
   }
 }
 
+/// Used by [EventRule] for triggering [onEvent] callback.
+///
+/// A type of [EventListener] which delays its calls to prevent frequent calls.
 class DebouncedEventListener<T> extends EventListener<T> {
   /// Debounce time
   final Duration duration;
@@ -280,10 +289,15 @@ class EventBus {
   EventBus._() : _stream = StreamController.broadcast();
   static final EventBus _instance = EventBus._();
 
+  /// To emit an event
   static void emit<T>(_EventPayload<T> event) =>
       _instance._stream.sink.add(event);
 }
 
+/// An [EventBus] Subscriber
+///
+/// [EventRule] subscribe to [EventBus]'s [Event] to
+/// call corresponding [EventListener]'s callbacks.
 class EventRule<T> {
   /// An [Event] to which this [EventRule] is subscribed to.
   final Event<T> event;
