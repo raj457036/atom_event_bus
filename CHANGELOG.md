@@ -3,3 +3,7 @@
 * Added EventListener, OneOffEventListener and DebouncedEventListener
 * Added Singleton EventBus
 * Added EventRule to subscribe to an Event
+
+## 0.0.2
+
+* Updated Readme
