@@ -91,6 +91,12 @@ class _SignedInStatusState extends State<SignedInStatus> {
       ),
     );
   }
+
+  @override
+  void dispose() {
+    signInRule.cancel(); // cancelling the subscription
+    super.dispose();
+  }
 }
 
 
