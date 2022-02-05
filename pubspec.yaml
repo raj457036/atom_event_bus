@@ -1,6 +1,6 @@
 name: atom_event_bus
 description: An Event Bus to decouple your code dependencies.
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/raj457036/atom_event_bus
 repository: https://github.com/raj457036/atom_event_bus
 
