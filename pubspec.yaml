@@ -1,7 +1,8 @@
 name: atom_event_bus
 description: An Event Bus to decouple your code dependencies.
 version: 0.0.1
-homepage:
+homepage: https://github.com/raj457036/atom_event_bus
+repository: https://github.com/raj457036/atom_event_bus
 
 environment:
   sdk: ">=2.16.0 <3.0.0"
